@@ -1,10 +1,9 @@
-global using System.ComponentModel;
+global using System.Data;
 
 namespace WinFormsApp;
 
 internal static class Program
 {
-    [STAThread]
     static void Main()
     {
         ApplicationConfiguration.Initialize();
