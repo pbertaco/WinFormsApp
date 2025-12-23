@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp;
+﻿namespace Calculator;
 
 public partial class MainForm : Form
 {

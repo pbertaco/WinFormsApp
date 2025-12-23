@@ -1,6 +1,6 @@
 global using System.Data;
 
-namespace WinFormsApp;
+namespace Calculator;
 
 internal static class Program
 {
