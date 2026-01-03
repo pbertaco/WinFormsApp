@@ -8,13 +8,14 @@ public partial class MainForm : Form
     public MainForm()
     {
         string fontFamilyName = "Arial";
+        string personaName = SteamManager.PersonaName();
 
-        Text = "Calculator";
+        Text = string.IsNullOrEmpty(personaName) ? "Calculator" : $"Calculator - Hello, {personaName}!";
         ClientSize = new Size(800, 1000);
 
         textBox = new TextBox();
         textBox.ReadOnly = true;
-        textBox.Font = new Font(fontFamilyName, 18, FontStyle.Regular, GraphicsUnit.Point);
+        textBox.Font = new Font(fontFamilyName, 18, FontStyle.Regular);
         textBox.TextAlign = HorizontalAlignment.Right;
         textBox.Dock = DockStyle.Top;
 
@@ -54,7 +55,7 @@ public partial class MainForm : Form
                 Button button = new();
                 button.Text = buttonList[index];
                 button.Dock = DockStyle.Fill;
-                button.Font = new Font(fontFamilyName, 14, FontStyle.Regular, GraphicsUnit.Point);
+                button.Font = new Font(fontFamilyName, 14, FontStyle.Regular);
                 tableLayoutPanel.Controls.Add(button, column, row);
 
                 if (button.Text != " ")

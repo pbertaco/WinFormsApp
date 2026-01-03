@@ -6,6 +6,36 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <Configurations>Debug;Release;Steam</Configurations>
+    <AssemblyName>SteamworksExample</AssemblyName>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Steam|AnyCPU'">
+    <DefineConstants>$(DefineConstants);Windows;Steam;STEAMWORKS_WIN</DefineConstants>
+    <SelfContained>true</SelfContained>
+    <OutputPath>C:\Program Files (x86)\Steam\steamapps\common\Spacewar\</OutputPath>
+    <PublishDir>C:\Program Files (x86)\Steam\steamapps\common\Spacewar\</PublishDir>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files (x86)\Steam\steam.exe</StartProgram>
+    <StartArguments>-applaunch 480</StartArguments>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Steamworks.NET" Version="2024.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Steamworks.NET\Windows-x64\Steamworks.NET.dll"
+      CopyToOutputDirectory="PreserveNewest">
+      <Link>Steamworks.NET.dll</Link>
+    </None>
+    <None Include="Steamworks.NET\Windows-x64\steam_api64.dll"
+      CopyToOutputDirectory="PreserveNewest">
+      <Link>steam_api64.dll</Link>
+    </None>
+  </ItemGroup>
 
 </Project>
