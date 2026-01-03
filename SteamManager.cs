@@ -2,7 +2,7 @@ namespace Calculator;
 
 public class SteamManager
 {
-    static string personaName = "null";
+    static string personaName = "";
 
     public static void Init()
     {
